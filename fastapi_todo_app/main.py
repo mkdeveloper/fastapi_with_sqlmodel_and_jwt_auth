@@ -10,7 +10,14 @@ lifespan = database.lifespan  # Alias for the lifespan event handler
 get_current_user = auth.get_current_user  # Alias for the current user retrieval function
 
 # Initialize the FastAPI application with lifespan events and app title
-app = FastAPI(lifespan=lifespan, title="FastAPI Todo App")
+app = FastAPI(lifespan=lifespan, title="FastAPI Todo App",
+    version="0.0.1",
+    servers=[
+        {
+            "url": "https://infinitely-engaged-ladybug.ngrok-free.app/", # ADD NGROK URL Here Before Creating GPT Action
+            "description": "Development Server"
+        }
+        ])
 
 # Include the authentication router to handle auth-related routes
 app.include_router(auth.router)
