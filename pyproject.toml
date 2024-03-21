@@ -16,7 +16,16 @@ python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
 python-multipart = "^0.0.9"
 pytest = "^8.1.1"
+streamlit = "^1.32.2"
+requests = "^2.31.0"
+streamlit-modal = "^0.1.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+start-fastapi = "fastapi_todo_app.main:app"
+start-streamlit = "streamlit_ui.app:main"
+
