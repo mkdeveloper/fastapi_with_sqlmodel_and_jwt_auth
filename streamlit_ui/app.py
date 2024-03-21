@@ -25,12 +25,6 @@ def login_user(username, password):
     return None
 
 
-def welcome_message():
-    response = requests.get(API_BASE_URL)
-    message = response.json()
-    return message
-
-
 def register_user(username, email, password):
     response = requests.post(
         f"{API_BASE_URL}/auth/signup",
@@ -41,8 +35,7 @@ def register_user(username, email, password):
 
 def login_and_registration():
     with st.container():
-        msg = welcome_message()
-        st.header(msg["message"])
+        st.header("Welcome to MK's Todo App API")
         st.subheader('Login')
         username = st.text_input('username')
         password = st.text_input('password', type='password')
