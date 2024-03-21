@@ -11,7 +11,6 @@ from jose import JWTError, jwt
 import os
 from dotenv import load_dotenv
 from typing import Optional
-from fastapi import Security
 
 
 load_dotenv()
